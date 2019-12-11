@@ -1,27 +1,20 @@
-var path = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const base = require('./webpack.config.base.js')
 
 module.exports = {
+  ...base,
   mode: 'development',
-  entry: './src/index.js',
-  output: {
-    filename: '[name].[contenthash].js'
-  },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'App',
-      template: 'src/assets/template.html'
-    })
+    ...base.plugins,
   ],
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      }
-    ]
+        use: ['style-loader', 'css-loader']
+      },
+    ],
   }
 };
