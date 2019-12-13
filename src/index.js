@@ -2,9 +2,9 @@ import './index.less'
 import img from './assets/1.jpg'
 
 const div = document.getElementById('app')
-div.innerHTML = `
-  <img src="${img}">
-`
+// div.innerHTML = `
+//   <img src="${img}">
+// `
 const button = document.createElement('button')
 button.innerHTML = '懒加载'
 button.onclick = () => {
