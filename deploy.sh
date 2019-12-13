@@ -1,6 +1,6 @@
 yarn build &&
 git checkout gh-pages &&
-rm -r *.html *.js &&
+rm -rf *.html *.js &&
 mv dist/* ./ &&
 rm -rf dist;
 git add . &&
